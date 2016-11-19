@@ -1,0 +1,24 @@
+{
+  "name": "jgodish/mailchimp-php",
+  "description": "Mailchimp PHP API Client",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": ["email", "api"],
+  "authors": [
+    {
+      "name": "Jason Godish",
+      "email": "jgodish@gmail.com"
+    }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "~6.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mailchimp\\": "src/"
+    }
+  }
+}
