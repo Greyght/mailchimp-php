@@ -15,7 +15,7 @@ class Lists extends Client {
 	 *
 	 * @param ListQueryParameters $query_parameters
 	 *
-	 * @return \Godish\Http\Response
+	 * @return \Mailchimp\Http\Response
 	 *
 	 */
 	public function all(ListQueryParameters $query_parameters = null)
@@ -29,7 +29,7 @@ class Lists extends Client {
 	 * @param $id
 	 * @param ListQueryParameters|null $query_parameters
 	 *
-	 * @return \Godish\Http\Response
+	 * @return \Mailchimp\Http\Response
 	 */
 	public function find($id, ListQueryParameters $query_parameters = null)
 	{
@@ -51,6 +51,9 @@ class Lists extends Client {
 
 	}
 
+	/**
+	 * @return Members
+	 */
 	public function members()
 	{
 		return new Members($this->mailchimp);

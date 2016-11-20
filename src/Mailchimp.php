@@ -1,16 +1,9 @@
 <?php namespace Mailchimp;
 
-use Mailchimp\Exceptions\InvalidApiKey;
+use Mailchimp\Resources\Account;
 use Mailchimp\Resources\Lists;
 use Mailchimp\Resources\Members;
-
-/*
-
 use Mailchimp\Exceptions\InvalidApiKey;
-use Mailchimp\Mailchimp\Lists;
-use Mailchimp\Mailchimp\Members;
-use GuzzleHttp\Client;
-*/
 
 class Mailchimp {
 
@@ -23,11 +16,24 @@ class Mailchimp {
 		$this->setApiKey($api_key);
 	}
 
+	/**
+	 * Get the API key
+	 *
+	 * @return string
+	 */
 	public function getApiKey()
 	{
 		return $this->api_key;
 	}
 
+	/**
+	 * Set the API key
+	 *
+	 * @param $api_key
+	 * @return $this
+	 *
+	 * @throws InvalidApiKey
+	 */
 	public function setApiKey($api_key)
 	{
 		if (strpos($api_key, '-') === false) {
@@ -41,9 +47,22 @@ class Mailchimp {
 		return $this;
 	}
 
+	/**
+	 * Get the data center associated with the account
+	 *
+	 * @return string
+	 */
 	public function getDataCenter()
 	{
 		return $this->dc;
+	}
+
+	/**
+	 * @return Account
+	 */
+	public function account()
+	{
+		return new Account($this);
 	}
 
 	/**

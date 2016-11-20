@@ -34,6 +34,14 @@ class Members extends Client {
 		return $this->get("lists/{$list}/members/{$subscriber}");
 	}
 
+	/**
+	 * Create a new member in the specified list
+	 *
+	 * @param $list List ID
+	 * @param array $member
+	 *
+	 * @return \Mailchimp\Http\Response
+	 */
 	public function create($list, array $member)
 	{
 		return $this->post("lists/{$list}/members", $member);
@@ -44,10 +52,25 @@ class Members extends Client {
 
 	}
 
+	/**
+	 * Creates or updates a member in the specified list
+	 *
+	 * @param $list
+	 * @param array $member
+	 *
+	 * @return \Mailchimp\Http\Response
+	 */
 	public function createOrUpdate($list, array $member) {
 		return $this->put("lists/{$list}/members/" . md5(strtolower($member['email_address'])), $member);
 	}
 
+	/**
+	 * Search for members based on the parameters provided
+	 *
+	 * @param QueryParameterInterface $parameters
+	 *
+	 * @return \Mailchimp\Http\Response
+	 */
 	public function search(QueryParameterInterface $parameters)
 	{
 		return $this->get("search-members", $parameters);

@@ -38,4 +38,9 @@ abstract class Client {
 		return new Response($this->http->request('POST', $uri, ['http_errors' => false, 'json' => $payload]));
 	}
 
+	public function put($uri, array $payload)
+	{
+		return new Response($this->http->request('PUT', $uri, ['http_errors' => false, 'json' => $payload]));
+	}
+
 }
