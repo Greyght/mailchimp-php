@@ -1,5 +1,5 @@
 {
-  "name": "jgodish/mailchimp-php",
+  "name": "greyght/mailchimp-php",
   "description": "Mailchimp PHP API Client",
   "version": "1.0.0",
   "license": "MIT",
@@ -11,7 +11,7 @@
     }
   ],
   "require": {
-    "guzzlehttp/guzzle": "~6.2"
+    "guzzlehttp/guzzle": "^7.2"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.0"
